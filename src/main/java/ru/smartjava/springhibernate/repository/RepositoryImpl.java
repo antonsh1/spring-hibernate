@@ -2,7 +2,6 @@ package ru.smartjava.springhibernate.repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.TypedQuery;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import ru.smartjava.springhibernate.entity.Customer;
