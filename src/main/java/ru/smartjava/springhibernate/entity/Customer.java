@@ -1,11 +1,12 @@
 package ru.smartjava.springhibernate.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-@Builder
+
 @Entity
-@Data
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
