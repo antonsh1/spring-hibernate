@@ -4,5 +4,10 @@ import java.util.Optional;
 
 public interface JPAService {
 
-    Optional<String> getPersonsByCity(String Name);
+    Optional<String> getCustomersByCity(String name);
+
+    Optional<String> getCustomersByAgeLessThan(Integer age);
+
+    Optional<String> getCustomersByNameAndSureName(String name, String sureName);
+
 }
