@@ -1,8 +1,8 @@
 ### Домашнее задание к занятию «8.5. Spring Data JPA»
 
-# Задача «Слой DAO c JPA Repositories»
+# Задача «@Query*» (задача со звёздочкой)
 
-[Ссылка на задание](https://github.com/netology-code/jd-homeworks/blob/master/spring-jpa/task1/README.md)
+[Ссылка на задание](https://github.com/netology-code/jd-homeworks/blob/master/spring-jpa/task2/README.md)
 
 
 ### Ссылки для получения корректных данных:
