@@ -2,8 +2,8 @@ package ru.smartjava.springhibernate.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,7 +15,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
-@EnableWebSecurity
+@EnableMethodSecurity(securedEnabled = true, prePostEnabled = true, jsr250Enabled = true)
 public class WebSecurityConfig {
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -26,15 +26,15 @@ public class WebSecurityConfig {
     public InMemoryUserDetailsManager userDetailsService() {
         UserDetails user1 = User.withUsername("user1")
                 .password(passwordEncoder().encode("password"))
-                .roles("CITY")
+                .roles("CITY","READ")
                 .build();
         UserDetails user2 = User.withUsername("user2")
                 .password(passwordEncoder().encode("password"))
-                .roles("AGE")
+                .roles("AGE","WRITE")
                 .build();
         UserDetails admin = User.withUsername("admin")
                 .password(passwordEncoder().encode("password"))
-                .roles("ALL")
+                .roles("ALL","DELETE")
                 .build();
         return new InMemoryUserDetailsManager(user1, user2, admin);
     }

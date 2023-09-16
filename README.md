@@ -1,19 +1,21 @@
-### Домашнее задание к занятию «8.6. Безопасность в веб-приложениях, Spring Security»
+### Домашнее задание к занятию «8.7. Method security. OAuth2»
 
-# Задача «Безопасное приложение»
+# Задача «Безопасные методы»
 
-[Ссылка на задание](https://github.com/netology-code/jd-homeworks/blob/master/spring_security/task1/README.md)
+[Ссылка на задание](https://github.com/netology-code/jd-homeworks/blob/master/spring_method_security/task1/README.md)
 
-### Пользователи системы
-* user1
-* user2
-* admin
-Пароль у всех password
+### Пользователи системы (у всех пароль password)
+* user1 роль READ
+* user2 роль WRITE
+* admin роль DELETE
 
 ### Ссылки для получения данных:
-* Доступен всем
-http://localhost:8080/persons/by-city?city=Ekaterinburg
-* Доступен user2 или admin
-http://localhost:8080/persons/by-age-less?age=15
-* Доступен admin
-http://localhost:8080/persons/by-name-surename?name=Alexey&sureName=Ivanov
+* Доступна только user1 с ролью READ  
+http://localhost:8080/security/read
+* Доступна только user2 с ролью WRITE  
+http://localhost:8080/security/write
+* Доступна user2 с ролью WRITE и admin с ролью DELETE   
+http://localhost:8080/security/delete
+* Доступна при query параметре username == логину пользователя  
+http://localhost:8080/security/user?username=admin  
+
